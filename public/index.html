@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bloom Hijabs • Colorful, Comfortable, Confident</title>
+		<meta name="description" content="Discover beautiful hijabs in endless shades. Build your bundle, pick your colors, and checkout fast." />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/styles.css" />
+		<script defer src="/app.js"></script>
+	</head>
+	<body>
+		<div class="announcement">✨ New shades just dropped! Free delivery on orders over $50</div>
+		<header class="site-header">
+			<div class="brand">Bloom Hijabs</div>
+			<nav class="nav">
+				<a href="#shop">Shop</a>
+				<a href="#why">Why Us</a>
+				<a href="#reviews">Reviews</a>
+			</nav>
+			<button class="cart-pill" id="openCartBtn" aria-label="Open cart">
+				<span id="cartCount">0</span>
+				Cart
+			</button>
+		</header>
+
+		<section class="hero">
+			<div class="hero-inner">
+				<h1>Find your everyday confidence</h1>
+				<p>Three styles. Dozens of shades. Zero guesswork. Tap colors to add.</p>
+				<a class="cta" href="#shop">Shop the shades</a>
+			</div>
+		</section>
+
+		<main>
+			<section id="shop" class="collections">
+				<h2>Pick your hijab style</h2>
+				<div id="collections"></div>
+			</section>
+
+			<section id="why" class="why">
+				<h2>Soft. Breathable. Made to move.</h2>
+				<ul>
+					<li>Stay-cool fabrics that drape beautifully</li>
+					<li>No-slip comfort for all-day wear</li>
+					<li>Handpicked shades for every mood and outfit</li>
+				</ul>
+			</section>
+
+			<section id="reviews" class="reviews">
+				<h2>Loved by stylish women everywhere</h2>
+				<div class="review-cards">
+					<article>
+						<p>“Best chiffon I own. Colors are stunning and it stays put.”</p>
+						<div>— Sara</div>
+					</article>
+					<article>
+						<p>“Jersey is gym-proof. I grabbed 5 colors in one go!”</p>
+						<div>— Aaliyah</div>
+					</article>
+					<article>
+						<p>“Silk feels luxurious. Perfect for occasions.”</p>
+						<div>— Noor</div>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>© <span id="year"></span> Bloom Hijabs. All rights reserved.</div>
+			<div class="badges">
+				<span>Secure checkout</span>
+				<span>Fast shipping</span>
+				<span>Easy returns</span>
+			</div>
+		</footer>
+
+		<!-- Cart Drawer -->
+		<aside id="cartDrawer" class="drawer" aria-hidden="true">
+			<div class="drawer-header">
+				<h3>Your cart</h3>
+				<button id="closeCartBtn" class="icon-btn" aria-label="Close cart">✕</button>
+			</div>
+			<div id="cartItems" class="drawer-body"></div>
+			<div class="drawer-footer">
+				<div class="totals">
+					<span>Subtotal</span>
+					<strong id="cartSubtotal">$0.00</strong>
+				</div>
+				<button id="checkoutBtn" class="primary">Checkout</button>
+			</div>
+		</aside>
+
+		<!-- Checkout Modal -->
+		<div id="checkoutModal" class="modal" aria-hidden="true">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Fast Checkout</h3>
+					<button id="closeCheckoutBtn" class="icon-btn" aria-label="Close checkout">✕</button>
+				</div>
+				<form id="checkoutForm" class="modal-body">
+					<div class="field">
+						<label for="name">Full name</label>
+						<input id="name" name="name" type="text" placeholder="Your name" required />
+					</div>
+					<div class="field">
+						<label for="phone">Phone number</label>
+						<input id="phone" name="phone" type="tel" placeholder="e.g. 5551234567" pattern="[0-9\-\+\s]{7,}" required />
+					</div>
+					<div class="field">
+						<label for="address">Delivery address</label>
+						<textarea id="address" name="address" rows="3" placeholder="Street, City, ZIP" required></textarea>
+					</div>
+					<div id="orderSummary" class="order-summary"></div>
+					<div class="modal-actions">
+						<button type="button" class="secondary" id="backToCartBtn">Back to cart</button>
+						<button type="submit" class="primary">Place order</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Sticky bar for mobile -->
+		<div class="sticky-bar">
+			<button class="primary" id="stickyCheckout">
+				<span id="stickyCount">0</span> items • Checkout
+			</button>
+		</div>
+	</body>
+</html>
